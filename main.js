@@ -23,7 +23,7 @@ if ((ESMAYOR) && (nombreUsuario != "") && (apellidoUsuario != "")) {
 
 
     alert("Estos productos llevan IVA, El total es: " + carrito*1.21);
-    console.log("El total de los productos con IVA es:" + carrito*1.21);
+    console.log("El total de los productos con IVA es: " + carrito*1.21);
 
 
     let aceptar = prompt("Responda SI/NO para confirmar su compra");

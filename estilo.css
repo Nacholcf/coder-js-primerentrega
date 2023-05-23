@@ -1,0 +1,230 @@
+.superior {
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.88);
+    color: #F1F2EE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .superior p {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Nunito Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+  
+  
+  .banner {
+    background-image: url("../img/Bannersinfondo.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 600px;
+    cursor: pointer;
+  }
+  
+  .elcontenido {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 60px;
+    font-family: "Nunito Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .eldiv {
+    filter: grayscale(90%);
+    border: solid;
+    cursor: pointer;
+    width: 250px;
+    margin: auto;
+    text-align: center;
+    font-family: "Nunito Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .eldiv:hover {
+    filter: grayscale(0%);
+  }
+  
+  .eldiv > img { 
+    width: 100%;
+    height: 250px;
+  }
+  
+  .precio {
+    color: green;
+    font-size: 22px;
+  }
+  
+  .eldiv button { 
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .eldiv button:hover {
+    opacity: 0.7;
+  }
+
+  .modalCarrito {
+    width: 80%;
+    margin: 0 10%;
+    max-height: 88vh;
+    color: grey;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: fixed;
+    overflow: auto;
+    z-index: 9;
+    top: 12vh;
+    scrollbar-color: none;
+  }
+
+  .modalCarrito ::-webkit-scrollbar { 
+    display: none;
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    color: antiquewhite;
+    width: 100%;
+  }
+
+  .modal-header-title {
+    justify-self: start;
+  }
+
+  .modal-header-button {
+    cursor: pointer;
+  }
+
+  .modalCarrito > .modal-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    margin: 10px;
+  }
+
+  .modalCarrito> div > img { 
+    height: 120px;
+    width: 120px;
+  }
+
+  .total-content { 
+    font-size: 25px;
+    padding: 20px;
+    text-align: center;
+    padding-top: 20px;
+  }
+  
+  .inferior {
+    background-color: rgba(0, 0, 0, 0.88);
+    height: 40px;
+    color: #F1F2EE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .inferior p {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Nunito Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+  
+  .logo {
+    width: 120px;
+  }
+  
+  
+  a {
+    color: #435058;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 30px 30px;
+  }
+  
+  .carrito {
+    background-color: rgba(241, 139, 118, 0.951);
+    color: black;
+  }
+  .carrito:hover {
+    background-color: rgb(246, 1, 1);
+    color: black;
+  }
+  
+  .titulo1 {
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-family: "Nunito Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .main p {
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-family: "Nunito Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .parrafo {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-family: "Nunito Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  h2 {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-family: "Nunito Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .Nuestrosproductos {
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: xx-large;
+  }
+  
+  .subitulo {
+    text-align: center;
+    font-weight: bold;
+    font-family: "Nunito Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .piedepagina {
+    text-align: center;
+  }
+  

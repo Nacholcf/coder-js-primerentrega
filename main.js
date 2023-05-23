@@ -174,6 +174,13 @@ verCarrito.addEventListener("click", () => {
         `;
 
         modalCarrito.append(carritocontenido);
+
+        let eliminar = document.createElement("borrar");
+        eliminar.innerText = " X ";
+        eliminar.className = "eliminar-producto";
+        carritocontenido.append(eliminar);
+
+        eliminar.addEventListener("click", borrarProducto);
     });
 
 
@@ -187,11 +194,69 @@ verCarrito.addEventListener("click", () => {
 });
 
 
-const guardarEnLocal = () => {
-localStorage.setItem("carrito", JSON.stringify(carrito));
+
+const elcarrito = () => { 
+modalCarrito.innerHTML = "";
+modalCarrito.style.display = "flex"; 
+const modalHeader = document.createElement("div");
+modalHeader.className = "modal-header"
+modalHeader.innerHTML = `
+<h1 class="modal-header-title">Carrito.</h1>
+`;
+modalCarrito.append(modalHeader);
+
+const modalbutton = document.createElement("h1");
+modalbutton.innerText = "X";
+modalbutton.className = "modal-header-button"; 
+
+modalbutton.addEventListener("click", () => {
+    modalCarrito.style.display = "none";
+}); 
+
+modalHeader.append(modalbutton); 
+
+carrito.forEach((product) => { 
+    let carritocontenido = document.createElement("div"); 
+    carritocontenido.className = "modal-content"; 
+    carritocontenido.innerHTML = `
+      <img src="${product.img}">
+      <h3>${product.nombre}</h3>
+      <p>${product.precio}</p>
+    `;
+
+    modalCarrito.append(carritocontenido);
+
+    let eliminar = document.createElement("borrar");
+    eliminar.innerText = " X ";
+    eliminar.className = "eliminar-producto";
+    carritocontenido.append(eliminar);
+
+    eliminar.addEventListener("click", borrarProducto);
+}); 
+
+
+
+const total = carrito.reduce((acc, el) => acc + el.precio, 0); 
+
+const totalCompra = document.createElement("div")
+totalCompra.className = "total-content"
+totalCompra.innerHTML =  `Total a pagar: ${total} $`;
+modalCarrito.append(totalCompra);
+};
+
+const borrarProducto = () => {
+    const buscarId = carrito.find((element) => element.id);
+
+    carrito = carrito.filter((carrito1) => { 
+        return carrito1 !== buscarId;   
+    });
+
+    guardarEnLocal();
+    elcarrito();
 };
 
 
-
-
+const guardarEnLocal = () => {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    };
 

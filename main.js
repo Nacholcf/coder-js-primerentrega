@@ -113,7 +113,7 @@
 // console.log(sale);
 
 
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 productos.forEach((product) => {
     let content = document.createElement("div");
@@ -140,6 +140,7 @@ productos.forEach((product) => {
             precio: product.precio,
         });
         console.log(carrito);
+        guardarEnLocal();
     });
 });
 
@@ -175,6 +176,8 @@ verCarrito.addEventListener("click", () => {
         modalCarrito.append(carritocontenido);
     });
 
+
+
     const total = carrito.reduce((acc, el) => acc + el.precio, 0); 
 
     const totalCompra = document.createElement("div")
@@ -184,11 +187,9 @@ verCarrito.addEventListener("click", () => {
 });
 
 
-
-
-
-
-
+const guardarEnLocal = () => {
+localStorage.setItem("carrito", JSON.stringify(carrito));
+};
 
 
 

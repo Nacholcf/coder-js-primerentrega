@@ -1,0 +1,26 @@
+[
+    { 
+        "id": 1,
+        "nombre": "Buzo Gris",
+        "precio": 12000,
+        "img": "https://hillsideclothes.000webhostapp.com/img/buzogris.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Remera Naranja",
+        "precio": 8000,
+        "img": "https://hillsideclothes.000webhostapp.com/img/remera-naranja.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Buzo Crema",
+        "precio": 12000,
+        "img": "https://hillsideclothes.000webhostapp.com/img/buzocrema.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Remera Gris",
+        "precio": 16000,
+        "img": "https://hillsideclothes.000webhostapp.com/img/remera-gris.jpg"
+    }
+]

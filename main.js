@@ -2,7 +2,11 @@
 // let apellidoUsuario = prompt("Ingrese su apellido: ");
 // let edad = Number (prompt("Ingrese su edad"));
 // const ESMAYOR = (edad >= 18);
-
+Swal.fire({
+    imageUrl: 'img/hillsidelogo (1).ico' ,
+    title: 'Bienvenido a Hillside',
+    text: 'Aprovecha nuestras Ofertas!',
+  })
 
 // if ((ESMAYOR) && (nombreUsuario != "") && (apellidoUsuario != "")) {
 //     alert("Bienvenido al sitio web: " + " " + nombreUsuario + " " + apellidoUsuario);
@@ -47,32 +51,7 @@
     const verCarrito = document.getElementById("verCarrito"); 
     const modalCarrito = document.getElementById("modalCarrito");
 
-    const productos = [
-        { 
-            id: 1,
-            nombre: "Buzo Gris",
-            precio: 12000,
-            img: "https://hillsideclothes.000webhostapp.com/img/buzogris.jpg"
-        },
-        {
-            id: 2,
-            nombre: "Remera Naranja",
-            precio: 8000,
-            img: "https://hillsideclothes.000webhostapp.com/img/remera-naranja.jpg"
-        },
-        {
-            id: 3,
-            nombre: "Buzo Crema",
-            precio: 12000,
-            img: "https://hillsideclothes.000webhostapp.com/img/buzocrema.jpg"
-        },
-        {
-            id: 4,
-            nombre: "Remera Gris",
-            precio: 16000,
-            img: "https://hillsideclothes.000webhostapp.com/img/remera-gris.jpg"
-        },
-    ];
+    
 
 //     let oferta = prompt("Si queres ver nuestros productos en oferta responda SI/NO")
    
@@ -115,34 +94,42 @@
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-productos.forEach((product) => {
-    let content = document.createElement("div");
-    content.className = "eldiv"
-    content.innerHTML = ` 
-    <img src="${product.img}">
-    <h3>${product.nombre}</h3>
-    <p class="precio">${product.precio} $</p>
-    `;
+const getProductos = async () => {
+    const respuesta = await fetch("data.json");
+    const data = await respuesta.json();
 
-    contenido.append(content);
-
-    let comprar = document.createElement("button")
-    comprar.innerText = "Anadir al Carrito";
-    comprar.className = "comprar";
-
-    content.append(comprar);
-
-    comprar.addEventListener("click", () =>{
-        carrito.push({
-            id : product.id,
-            img: product.img,
-            nombre: product.nombre,
-            precio: product.precio,
+    data.forEach((product) => {
+        let content = document.createElement("div");
+        content.className = "eldiv"
+        content.innerHTML = ` 
+        <img src="${product.img}">
+        <h3>${product.nombre}</h3>
+        <p class="precio">${product.precio} $</p>
+        `;
+    
+        contenido.append(content);
+    
+        let comprar = document.createElement("button")
+        comprar.innerText = "Anadir al Carrito";
+        comprar.className = "comprar";
+    
+        content.append(comprar);
+    
+        comprar.addEventListener("click", () =>{
+            carrito.push({
+                id : product.id,
+                img: product.img,
+                nombre: product.nombre,
+                precio: product.precio,
+            });
+            console.log(carrito);
+            guardarEnLocal();
         });
-        console.log(carrito);
-        guardarEnLocal();
     });
-});
+};
+
+getProductos(); 
+
 
 verCarrito.addEventListener("click", () => {
     modalCarrito.innerHTML = "";
@@ -259,4 +246,6 @@ const borrarProducto = () => {
 const guardarEnLocal = () => {
     localStorage.setItem("carrito", JSON.stringify(carrito));
     };
+
+
 
